@@ -1,0 +1,12 @@
+$font-stack: Helvetica, sans-serif;
+$primary-color: blue;
+
+body {
+	font: 1rem $font-stack;
+	color: $primary-color;
+}
+
+input {
+	height: 2rem;
+	width: 25rem;
+}
