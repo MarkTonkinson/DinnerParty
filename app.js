@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	// TODO: Find out how to hide this while the page is loading, rather than after
+	
 	$('#party-definition').hide();
 	var dinnerPartyRef = new Firebase("https://tonkinsondinnerparty.firebaseio.com/");
 

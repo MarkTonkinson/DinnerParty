@@ -2,7 +2,7 @@ $(document).ready(function(){
 	console.log('hey there')
 	var dinnerPartyRef = new Firebase("https://tonkinsondinnerparty.firebaseio.com/");
 
-	var newDinner = function(){
+	var newDinner = function(dinnerObj){
 		dinnerPartyRef.set({
 			Dinner: {
 			dinnerTheme: "The Great Wall Feast",
@@ -21,8 +21,18 @@ $(document).ready(function(){
 
 
 	$("form").submit(function(event){
-		var hello = $('#planned-theme').val()
-		console.log(hello);
+		var dinner = {
+			dinnerTheme: $('#planned-theme').val(),
+			location: $('#planned-location').val(),
+			time: $('#planned-time').val(),
+			price: $('#planned-price').val(),
+			date: $('#planned-date').val(),
+			firstCourse: $('#planned-course1').val(),
+			secondCourse: $('#planned-course2').val(),
+			thirdCourse: $('#planned-course3').val(),
+			fourthCourse: $('#planned-course4').val()
+		}
+		console.log(dinner);
 		event.preventDefault();
 	})
 

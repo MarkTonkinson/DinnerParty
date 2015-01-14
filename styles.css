@@ -4,6 +4,9 @@ body {
 
 input {
   height: 2rem;
-  width: 30rem; }
+  width: 25rem; }
+
+#party-definition {
+  display: none; }
 
 /*# sourceMappingURL=styles.css.map */
