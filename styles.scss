@@ -1,16 +1,51 @@
 $font-stack: Helvetica, sans-serif;
 $primary-color: blue;
+$margin-percent: 20%;
+$interior-background-color: white;
 
 body {
 	font: 1rem $font-stack;
 	color: $primary-color;
+	background-color: rgba(1,1,1,0.9);
+	margin: 0;
+	padding: 0;
+	display: block;
+
 }
 
+
+section, header, footer {
+	width: 70%;
+	margin: 0 auto;
+	border-bottom: 1px solid black;
+	padding: 1rem;
+	background-color: $interior-background-color;
+}
+
+button {
+	padding: 1rem;
+
+}
+
+header {
+	text-align: center;
+}
+
+form {
+	margin: 0 auto;
+	padding: 0 2rem;
+}
 input {
+	text-align: center;
 	height: 2rem;
-	width: 25rem;
+	width: 100%;
 }
 
 #party-definition {
 	display: none;
+	text-align: left;
+}
+
+#party-definition:hover {
+	cursor: pointer;
 }

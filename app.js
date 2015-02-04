@@ -3,22 +3,7 @@ $(document).ready(function(){
 	$('#party-definition').hide();
 	var dinnerPartyRef = new Firebase("https://tonkinsondinnerparty.firebaseio.com/");
 
-	var newDinner = function(){
-		dinnerPartyRef.set({
-			Dinner: {
-			dinnerTheme: "The Great Wall Feast",
-			location: "Tonkinson Apartment",
-			time: "7pm",
-			date: "January 27",
-			firstCourse: "Boadza",
-			secondCourse: "Mandarin Chicken Orange Salad or Peanut Dressing Salad",
-			thirdCourse: "General Tzos and Orange Chicken with fried rice and steam vegetables",
-			fourthCourse: "Dessert- to be determined",
-			price: "$8.00"
-			}
 
-		})
-	}
 
 	var getRef = new Firebase(dinnerPartyRef + "/Dinner")
 
@@ -33,13 +18,16 @@ $(document).ready(function(){
 	  $('#second-course').text(partyInfo.secondCourse)
 	  $('#third-course').text(partyInfo.thirdCourse)
 	  $('#fourth-course').text(partyInfo.fourthCourse)
+	  $('#spots-left').text(partyInfo.spotsAvailable - partyInfo.attendees + '/' + partyInfo.spotsAvailable)
 	}, function (errorObject) {
 	  console.log("The read failed: " + errorObject.code);
 	});
 
+	
 	$('section').ready(function(){
 		$('section').slideDown("slow");
 	})
+	
 
 	$('#show-party-definition').on('click', function(){
 		$('#party-definition').show();

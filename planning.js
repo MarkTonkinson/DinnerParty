@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	console.log('hey there')
+	
 	var dinnerPartyRef = new Firebase("https://tonkinsondinnerparty.firebaseio.com/");
 
 	var newDinner = function(dinnerObj){
@@ -13,11 +13,15 @@ $(document).ready(function(){
 			secondCourse: "Mandarin Chicken Orange Salad or Peanut Dressing Salad",
 			thirdCourse: "General Tzos and Orange Chicken with fried rice and steam vegetables",
 			fourthCourse: "Dessert- to be determined",
-			price: "$8.00"
+			price: "$8.00",
+			spotsAvailable: 6,
+			attendees: 0
 			}
 
 		})
 	}
+	
+	
 
 
 	$("form").submit(function(event){
@@ -30,7 +34,8 @@ $(document).ready(function(){
 			firstCourse: $('#planned-course1').val(),
 			secondCourse: $('#planned-course2').val(),
 			thirdCourse: $('#planned-course3').val(),
-			fourthCourse: $('#planned-course4').val()
+			fourthCourse: $('#planned-course4').val(),
+			spotsAvailable: $('#spots-available').val()
 		}
 		console.log(dinner);
 		event.preventDefault();
