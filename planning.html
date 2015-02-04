@@ -10,21 +10,25 @@
 
 <header>
 	<h1>Dinner Plan</h1>
+	<h6>*All fields are required!</h6>
 </header>
 
 <section>
 
 	<form>
-		<p><input type="text" placeholder="Theme" id="planned-theme"></input></p>
-		<p><input type="text" placeholder="Location" id="planned-location"></input></p>
-		<p><input type="text" placeholder="Time" id="planned-time"></input></p>
-		<p><input type="text" placeholder="Date" id="planned-date"></input></p>
-		<p><input type="text" placeholder="Price" id="planned-price"></input></p>
-		<p><input type="text" placeholder="1st Course" id="planned-course1"></input></p>
-		<p><input type="text" placeholder="2nd Course" id="planned-course2"></input></p>
-		<p><input type="text" placeholder="3rd Course" id="planned-course3"></input></p>
-		<p><input type="text" placeholder="4th Course" id="planned-course4"></input></p>
+		<p><label>Theme</label><input type="text" placeholder="Theme" id="planned-theme" autofocus required></input></p>
+		<p><label>Location</label><input type="text" placeholder="Location" id="planned-location" required></input></p>
+		<p><label>Time</label><input type="text" placeholder="Time" id="planned-time" required></input></p>
+		<p><label>Date</label><input type="date" id="planned-date" required></input></p>
+		<p><label>Price</label><input type="text" placeholder="Price" id="planned-price" required></input></p>
+		<p><label>1st Course</label><input type="text" placeholder="1st Course" id="planned-course1" required></input></p>
+		<p><label>2nd Course</label><input type="text" placeholder="2nd Course" id="planned-course2" required></input></p>
+		<p><label>3rd Course</label><input type="text" placeholder="3rd Course" id="planned-course3" required></input></p>
+		<p><label>4th Course</label><input type="text" placeholder="4th Course" id="planned-course4" required></input></p>
+		<p><label>5th course</label><input type="text" placeholder="4th Course" id="planned-course4" required></input></p>
+		<p><label>Max # of Guests</label><input type="number" min="2" max="40" value='4' id="spots-available" required></input></p>
 		<p><button id="submit-button" type="submit">Create New Event</button></p>
+		
 	</form>
 </section>
 

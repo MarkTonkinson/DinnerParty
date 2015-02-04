@@ -6,7 +6,7 @@ body {
   padding: 0;
   display: block; }
 
-section, header, footer {
+section, header, footer, table {
   width: 70%;
   margin: 0 auto;
   border-bottom: 1px solid black;
