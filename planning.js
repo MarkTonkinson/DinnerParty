@@ -52,7 +52,7 @@ $(document).ready(function(){
 		})
 	}
 	once()
-
+\
 	
 	
 	
@@ -62,6 +62,7 @@ $(document).ready(function(){
 	
 
 	$("form").submit(function(event){
+
 		var DinnerCurrent = {
 			dinnerTheme: $('#planned-theme').val(),
 			location: $('#planned-location').val(),
@@ -74,6 +75,7 @@ $(document).ready(function(){
 			fourthCourse: $('#planned-course4').val(),
 			spotsAvailable: $('#spots-available').val()
 		}
+		console.log(DinnerCurrent.date)
 		
 		event.preventDefault();
 		newDinner(DinnerCurrent);

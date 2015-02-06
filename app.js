@@ -11,6 +11,12 @@ $(document).ready(function(){
 	  console.log(snapshot.val());
 
 	  var partyInfo = snapshot.val();
+	  
+	  //we get a weird format of the date
+	  var dateArr = partyInfo.date.split('-')
+	  partyInfo.date = new Date(dateArr[0], dateArr[1], dateArr[2])
+	  partyInfo.date = moment(partyInfo.date).format('MMMM Do YYYY');
+	  
 	  $('#dinner-theme').text(partyInfo.dinnerTheme);
 	  $('#dinner-location').text(partyInfo.location)
 	  $('#dinner-time').text(partyInfo.time)
