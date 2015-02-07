@@ -17,17 +17,15 @@ var dinnerPartyRef = new Firebase("https://tonkinsondinnerparty.firebaseio.com/"
 			console.log(history[dinner])
 			//could reduce code here by changing the tags to a variable
 			//var open = '<tr><td>'
-			newTable.append('<tr><td> Dinner Theme : ' + history[dinner].dinnerTheme + '</td>')
-			newTable.append('<td> Location : ' + history[dinner].location + '</td></tr>')
-			newTable.append('<tr><td> Time : ' + history[dinner].time + '</tr></td>')
-			newTable.append('<tr><td> Date : ' + history[dinner].date + '</tr></td>')
-			newTable.append('<tr><td> Price : ' + history[dinner].price + '</tr></td>')
-			newTable.append('<tr><td> First Course : ' + history[dinner].firstCourse + '</tr></td>')
-			newTable.append('<tr><td> Second Course : ' + history[dinner].secondCourse + '</tr></td>')
-			newTable.append('<tr><td> Third Course : ' + history[dinner].thirdCourse + '</tr></td>')
-			newTable.append('<tr><td> Fourth Course : ' + history[dinner].fourthCourse + '</tr></td>')
-			newTable.append('<tr><td> Spots Available : ' + history[dinner].spotsAvailable + '</tr></td>')
-			newTable.append('<tr><td> Attendees : ' + history[dinner].attendees + '</tr></td>')
+			newTable.append('<tr><td> Dinner Theme : ' + history[dinner].dinnerTheme + '</td><td> First Course : ' + history[dinner].firstCourse + '</tr></td>')
+			newTable.append('<tr><td> Location : ' + history[dinner].location + '</td><td> Second Course : ' + history[dinner].secondCourse + '</td></tr>')
+			newTable.append('<tr><td> Time : ' + history[dinner].time + '<td> Third Course : ' + history[dinner].thirdCourse + '</td></tr>')
+			newTable.append('<tr><td> Date : ' + history[dinner].date + '<td> Fourth Course : ' + history[dinner].fourthCourse + '</td>')
+			newTable.append('<tr><td> Price : ' + history[dinner].price + '</td></tr>')
+		
+			
+			newTable.append('<tr><td> Spots Available : ' + history[dinner].spotsAvailable + '</td></tr>')
+			newTable.append('<tr><td> Attendees : ' + history[dinner].attendees + '</td></tr>')
 
 
 			

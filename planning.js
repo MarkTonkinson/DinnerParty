@@ -2,8 +2,8 @@ $(document).ready(function(){
 	
 	var dinnerPartyRef = new Firebase("https://tonkinsondinnerparty.firebaseio.com/");
 	var counterRef = new Firebase(dinnerPartyRef + '/counter');
-	counterRef.set({value: 1})
-	var historyRef = new Firebase(dinnerPartyRef + '/history');
+	
+	var historyRef = new Firebase(dinnerPartyRef + '/history/');
 	var obj = {}
 	var counter;
 	
@@ -28,13 +28,15 @@ $(document).ready(function(){
 		// 	}
 		dinnerPartyRef.set({currentDinner: dinnerObj})
 		
-		var p = "Dinner" + counter.value;
+		var p = "Dinner" + (counter.value + 1);
 		console.log(p)
 		obj[p] = dinnerObj
-		var newHistoryRef = new Firebase(historyRef + '/' + p)
-		historyRef.set(obj)
+		//its breaking here- it doesn't generate a new endpoint even though I'm giving it a new name- it overwrites the old one
+		newHistoryRef = historyRef.child(p)
+		
+		newHistoryRef.set(obj[p])
 		counter.value +=1
-		console.log(counter)
+		
 		counterRef.set(counter)
 
 	}
@@ -52,7 +54,7 @@ $(document).ready(function(){
 		})
 	}
 	once()
-\
+
 	
 	
 	
