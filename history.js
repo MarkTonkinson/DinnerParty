@@ -12,7 +12,7 @@ var dinnerPartyRef = new Firebase("https://tonkinsondinnerparty.firebaseio.com/"
 		for(var i = 1; i <= historyLength; i++){
 			$('#dynamic-history').append('<table></table>');
 			var newTable = $('#dynamic-history').children()
-			var dinner = "Dinner" + i
+			var dinner = "dinner" + i
 			
 			console.log(history[dinner])
 			//could reduce code here by changing the tags to a variable

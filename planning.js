@@ -11,7 +11,7 @@ $(document).ready(function(){
 
 	var newDinner = function(dinnerObj){
 		//this is always the case, no need to have to input it
-		console.log(dinnerObj)
+		//console.log(dinnerObj)
 		dinnerObj.attendees = 0
 		// var DinnerCurrent = { 
 		// 		dinnerTheme: "The Great Wall Feasting",
@@ -26,15 +26,60 @@ $(document).ready(function(){
 		// 		spotsAvailable: 6,
 		// 		attendees: 0
 		// 	}
-		dinnerPartyRef.set({currentDinner: dinnerObj})
 		
-		var p = "Dinner" + (counter.value + 1);
-		console.log(p)
-		obj[p] = dinnerObj
-		//its breaking here- it doesn't generate a new endpoint even though I'm giving it a new name- it overwrites the old one
-		newHistoryRef = historyRef.child(p)
 		
-		newHistoryRef.set(obj[p])
+		var p = "dinner" + (counter.value + 1)
+		// //console.log(p)
+		obj = dinnerObj
+		//console.log(obj)
+		// //its breaking here- it doesn't generate a new endpoint even though I'm giving it a new name- it overwrites the old one
+		//dinnerPartyRef.push(dinnerObj)
+		
+		historyRef.child(p).set(obj,
+			// dinner2: {
+			// 	dinnerTheme: "The Great Wall Feasting",
+			// 	location: "Tonkinson Apartment",
+			// 	time: "7pm",
+			// 	date: "January 27",
+			// 	firstCourse: "Boadza",
+			// 	secondCourse: "Mandarin Chicken Orange Salad or Peanut Dressing Salad",
+			// 	thirdCourse: "General Tzos and Orange Chicken with fried rice and steam vegetables",
+			// 	fourthCourse: "Dessert- to be determined",
+			// 	price: "$8.00",
+			// 	spotsAvailable: 6,
+			// 	attendees: 0}
+			// }, 
+			function(error, success){
+			if(error){
+				console.log(error)
+			} else if (success){
+				console.log('success', success);
+			} else {
+				console.log("i guess not")
+			}
+		})
+
+		// newRef.child('dinner2').set(obj, function(error, success){
+		// 	if(error){
+		// 		console.log(error)
+		// 	} else if (success){
+		// 		console.log('success', success);
+		// 	} else {
+		// 		console.log("i guess not")
+		// 	}
+		// })
+
+		// newRef.child(p).setWithPriority(obj, counter.value, function(error, success){
+		// 	if(error){
+		// 		console.log(error)
+		// 	} else if (success){
+		// 		console.log('success', success);
+		// 	} else {
+		// 		console.log("i guess not")
+		// 	}
+		// })
+		//.set overwrites all children at the location. which answers the problem above
+		//newHistoryRef.set(obj[p])
 		counter.value +=1
 		
 		counterRef.set(counter)
@@ -80,7 +125,16 @@ $(document).ready(function(){
 		console.log(DinnerCurrent.date)
 		
 		event.preventDefault();
-		newDinner(DinnerCurrent);
+		dinnerPartyRef.update({currentDinner: DinnerCurrent}, function(err){
+			if(err){
+				console.log(err)
+			} else {
+				newDinner(DinnerCurrent);
+			}
+		})
+		
+		//newDinner(DinnerCurrent);
+		
 	})
 
 }); //end document.ready
