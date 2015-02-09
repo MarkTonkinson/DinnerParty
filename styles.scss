@@ -22,9 +22,19 @@ section, header, footer, table, thead {
 	background-color: $interior-background-color;
 }
 
+
+
 td {
 	border: 1px solid black;
 	padding: 1rem;
+}
+
+.history-title {
+	color: red;
+}
+
+.invisible-row {
+	border: 1px solid white;	
 }
 
 button {
@@ -40,6 +50,7 @@ form {
 	margin: 0 auto;
 	padding: 0 2rem;
 }
+
 input {
 	text-align: center;
 	height: 2rem;
