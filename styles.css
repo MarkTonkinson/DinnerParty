@@ -1,10 +1,13 @@
 body {
-  font: 1rem Helvetica, sans-serif;
+  font: 1rem Verdana, sans-serif;
   color: blue;
   background-color: rgba(1, 1, 1, 0.9);
   margin: 0;
   padding: 0;
   display: block; }
+
+header > h2 {
+  font: 2rem "Lobster"; }
 
 section, header, footer, table, thead {
   width: 70%;
@@ -44,5 +47,12 @@ input {
 
 #party-definition:hover {
   cursor: pointer; }
+
+@media (max-width: 768px) {
+  section, header, footer, table, thead {
+    width: 100%; } }
+@media screen and (min-device-width: 320px) and (max-device-width: 768px) {
+  section, header, footer, table, thead {
+    width: 100%; } }
 
 /*# sourceMappingURL=styles.css.map */

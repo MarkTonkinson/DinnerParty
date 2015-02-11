@@ -1,4 +1,5 @@
-$font-stack: Helvetica, sans-serif;
+$font-stack: Verdana, sans-serif;
+$title-font: 'Lobster';
 $primary-color: blue;
 $margin-percent: 20%;
 $interior-background-color: white;
@@ -13,6 +14,9 @@ body {
 
 }
 
+header > h2 {
+	font: 2rem $title-font;
+}
 
 section, header, footer, table, thead {
 	width: 70%;
@@ -64,4 +68,16 @@ input {
 
 #party-definition:hover {
 	cursor: pointer;
+}
+
+@media (max-width: 768px) {
+	section, header, footer, table, thead {
+		width: 100%;
+	}
+}
+
+@media screen and (min-device-width: 320px) and (max-device-width: 768px) {
+	section, header, footer, table, thead {
+		width: 100%;
+	}
 }
