@@ -26,7 +26,7 @@ var dinnerPartyRef = new Firebase("https://tonkinsondinnerparty.firebaseio.com/"
 			var newTable = $('#dynamic-history').children()
 			var dinner = "dinner" + i
 			
-			console.log(history[dinner])
+			//console.log(history[dinner])
 			//could reduce code here by changing the tags to a variable- but would that add much?
 			//var openTag = '<tr><td> '
 			//table head doesn't work here - because it's at the top of a table
@@ -42,19 +42,13 @@ var dinnerPartyRef = new Firebase("https://tonkinsondinnerparty.firebaseio.com/"
 		//what is the difference- why does the variable return undefined?
 		$(".history-title").on('click', function(){
 			var dinner2 = $(this).text() //returns as Dinner + num
-			dinner2 = dinner2.replace('D','d')
-			console.log(dinner2)
-			var historyTwo = history;
-			console.log(historyTwo)
-			console.log(historyTwo.dinner1)
-			console.log(historyTwo['dinner1'])
-			console.log(dinner2)
-			console.log(historyTwo[dinner2])
+			dinner2 = dinner2.replace('D','d').trim()
+			console.log(history[dinner2])
 
-			// dinnerPartyRef.update({currentDinner: history[dinner]})
-			// var dinnerNum = "dinner" + (counter.value += 1)
-			// historyRef.child(dinnerNum).set(history[dinner])
-			// counterRef.set(counter)
+			dinnerPartyRef.update({currentDinner: history[dinner2]})
+			var dinnerNum = "dinner" + (counter.value += 1)
+			historyRef.child(dinnerNum).set(history[dinner2])
+			counterRef.set(counter)
 		})
 
 	}, function (errorObject) {
